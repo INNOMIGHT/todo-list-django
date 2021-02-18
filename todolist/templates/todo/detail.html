@@ -1,0 +1,12 @@
+{% extends parent_template|default:"todo/base.html" %}
+
+{% block title %}
+{{ block.super }} - Detail Page
+{% endblock %}
+
+{% block content %}
+<h1>{{ todo.name| title }}</h1>
+<p><em>This task is scheduled on {{ todo.task_date }}</em></p>
+<p>One can achieve anything if he sets his mind onto it.</p>
+<a href="{% url 'todo-list' %}"><p>Go to todo list</p></a>
+{% endblock %}

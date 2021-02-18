@@ -1,0 +1,22 @@
+{% extends parent_template|default:"todo/base.html" %}
+
+{% block title %}
+{{ block.super }} - Todos
+{% endblock %}
+
+{% block content %}
+<h1> Todo-List </h1>
+<a href="{% url 'todo-create' %}"> <p>Add Another Todo - </p></a>
+<ul>
+    {% for todo in todo_list %}
+    <a href="{{todo.get_absolute_url}}">
+        <li>{{ todo.name|title }}</li>
+    </a>
+    {% empty %}
+    <p><em>There are currently no todos.</em></p>
+    {% endfor %}
+</ul>
+{% endblock %}
+
+
+

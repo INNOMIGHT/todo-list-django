@@ -8,6 +8,8 @@ class TodoSerializer(HyperlinkedModelSerializer):
         model = Todo
         fields = "__all__"
         extra_kwargs = {
-            "lookup_field": "slug",
-            "view_name": "todo-api-detail"
+            "url": {
+                "lookup_field": "slug",
+                "view_name": "todo-api-detail"
+            }
         }

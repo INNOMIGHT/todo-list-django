@@ -1,0 +1,15 @@
+{% extends parent_template|default:"todo/base.html" %}
+
+{% block title %}
+{{ block.super }} - Add
+{% endblock %}
+
+{% block content %}
+<h1>Add new task</h1>
+<form action="", method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <button type="submit">Add New Task</button>
+</form>
+{% endblock %}

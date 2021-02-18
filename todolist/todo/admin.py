@@ -3,5 +3,5 @@ from .models import Todo
 
 
 @admin.register(Todo)
-class TagAdmin(admin.ModelAdmin):
+class TodoAdmin(admin.ModelAdmin):
     list_display = ("name", "slug")

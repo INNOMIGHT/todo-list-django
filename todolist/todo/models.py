@@ -5,6 +5,7 @@ from django.db.models import (
     DateTimeField,
 )
 from django_extensions.db.fields import AutoSlugField
+from django.urls import reverse
 
 
 class Todo(Model):
@@ -15,5 +16,13 @@ class Todo(Model):
 
     class Meta:
         ordering = ["task_date"]
+
+    def get_absolute_url(self):
+        return reverse(
+            "todo-detail",
+            kwargs={
+                "slug": self.slug,
+            }
+        )
 
 
